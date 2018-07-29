@@ -3,7 +3,9 @@
 pip install git+https://github.com/zeroleo12345/myclog-python.git
 
 # Debug
-pip install -e .
+    pip install -e .
+
+    rm -rf *.egg-info
 ```
 
 ## vs2015编写拓展python模块步骤
