@@ -8,6 +8,14 @@ pip install git+https://github.com/zeroleo12345/myclog-python.git
     rm -rf *.egg-info
 ```
 
+
+## 逐步安装
+```bash
+git clone https://github.com/zeroleo12345/myclog-python.git
+python3 setup.py install
+```
+
+
 ## vs2015编写拓展python模块步骤
 [使用VS2010编写Python的C扩展](http://blog.csdn.net/catalyst_zx/article/details/47333909  )
 ```
