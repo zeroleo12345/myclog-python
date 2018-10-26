@@ -134,6 +134,7 @@ log = MyLog()
 
 
 if __name__ == "__main__":
+
     def test_MyLog():
         #from mylog.log3 import log
         log.init(header="header", directory="tmp", level="debug", max_buffer=10240, max_line=100000)
@@ -143,11 +144,11 @@ if __name__ == "__main__":
         log.c("log:critical")
         log.p("log:print")
     
+
     def test_myclog():
         import traceback
         import time
         import sys
-        
         try:
             print('print dir(myclog):')
             print(dir(myclog))
@@ -182,6 +183,7 @@ if __name__ == "__main__":
             print(end - start)
         except:
             print(traceback.format_exc())
+
 
 if __name__ == "__main__":
     def Usage():
