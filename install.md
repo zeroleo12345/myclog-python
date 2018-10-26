@@ -1,3 +1,13 @@
+## 准备环境
+
+- CentOS
+``` bash
+yum install python36-devel
+```
+
+
+## Cygwin 版本编译:
+```
 #!/usr/bin/sh
 if [[ "`uname -a`" =~ "Cygwin" || "`uname -a`" =~ "Msys" ]];then
     rm -rf build; python.exe setup.py install
@@ -6,7 +16,16 @@ else
 fi
 find ./build -name "myclog*.pyd" | xargs -I{} -t sh -c "cp {} ~/code/mybase/myclog.pyd"
 find ./build -name "myclog*.so" | xargs -I{} -t sh -c "cp {} ~/code/mybase/myclog.so"
+```
 
-# Python3版本编译:
-# yum install python36-devel
-# rm -rf build; python3.6 setup.py install
+
+## Python 3 版本编译:
+``` bash
+rm -rf build; python3 setup.py install
+```
+
+
+## Python 2 版本编译:
+``` bash
+rm -rf build; python2 setup.py install
+```
