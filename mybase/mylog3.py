@@ -136,7 +136,7 @@ log = MyLog()
 if __name__ == "__main__":
 
     def test_MyLog():
-        #from mylog.log3 import log
+        #from mybase.mylog3 import log
         log.init(header="header", directory="tmp", level="debug", max_buffer=10240, max_line=100000)
         log.i("log:info")
         log.e("log:error")
