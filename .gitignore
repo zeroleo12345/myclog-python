@@ -201,3 +201,8 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+
+# Self Define
+dist/
+myclog.egg-info/
+tmp/
