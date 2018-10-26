@@ -10,7 +10,7 @@ extension_module = Extension('myclog',
 
 # packages = find_packages(), # 实际值为: ['mybase3']  (即py_mo_modules, 会自动查找__init__.py文件)
 if sys.version_info[0] == 2:    # (2, 5, 2, 'final', 0)
-    packages = ['mybase2']
+    packages = ['mybase']
 else:
     packages = ['mybase3']
 
@@ -21,4 +21,5 @@ setup(name = "myclog",
     description = "an Log module written in C",
     packages = packages,
     ext_modules = [extension_module],
+    zip_safe = False,
 )
