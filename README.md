@@ -9,7 +9,7 @@ pip install git+https://github.com/zeroleo12345/myclog-python.git
 ```
 
 
-## 逐步安装
+## 源码下载安装
 ```bash
 git clone https://github.com/zeroleo12345/myclog-python.git
 python3 setup.py install
