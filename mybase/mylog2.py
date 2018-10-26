@@ -1,3 +1,4 @@
+# coding:utf-8
 import myclog
 from mybase.ilog import ILog
 import traceback

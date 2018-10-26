@@ -1,3 +1,4 @@
+# coding:utf-8
 class ILog(object):
     @staticmethod
     def print_hook(msg):
