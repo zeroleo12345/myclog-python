@@ -19,7 +19,6 @@ setup(name = "myclog",
     author = "lynatgz",
     author_email = "zeroleo12345@163.com",
     description = "an Log module written in C",
-    # packages = find_packages(), # 实际值为: ['mybase3']  (即py_mo_modules, 会自动查找__init__.py文件)
     packages = packages,
     ext_modules = [extension_module],
 )
