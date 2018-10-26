@@ -7,7 +7,7 @@ yum install python36-devel
 
 
 ## Cygwin 版本编译:
-```
+``` bash
 #!/usr/bin/sh
 if [[ "`uname -a`" =~ "Cygwin" || "`uname -a`" =~ "Msys" ]];then
     rm -rf build; python.exe setup.py install
