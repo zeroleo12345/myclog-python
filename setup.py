@@ -21,5 +21,5 @@ setup(name = "myclog",
     description = "an Log module written in C",
     packages = packages,
     ext_modules = [extension_module],
-    zip_safe = False,
+    # zip_safe = False,
 )
