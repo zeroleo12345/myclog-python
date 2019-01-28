@@ -37,12 +37,17 @@ if __name__ == "__main__":
 
     def test_calmd5():
         string = sys.argv[1]
-        print calmd5( string )
+        print calmd5(string)
+
+    def test_sha1sum():
+        file_path = sys.argv[1]
+        print sha1sum(file_path)
 
 if __name__ == "__main__":
     def Usage():
         print u"""
         python ./{0} test_calmd5 "forgive me."
+        python ./{0} test_sha1sum ./input
         """.format(__file__)
     import sys
     if len(sys.argv) == 1: Usage(), sys.exit()
