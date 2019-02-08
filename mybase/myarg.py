@@ -10,7 +10,6 @@
 import sys
 
 # for k,v in args._get_kwargs():
-# 指定参数-h的回调函数: parser.print_help = Usage  # Usage为函数对象
 # 调用方法: parser.print_help()
 def init_args():
     import argparse
@@ -18,6 +17,7 @@ def init_args():
     parser.add_argument('-c', metavar='<FILE>', type=str, help='config file path', required=False, dest='conf')
     parser.add_argument('-log', metavar='<FILE>', type=str, help='log file path', required=False, dest='logfile')
     parser.add_argument('-level', metavar='<LEVEL>', type=str, help='debug|info|warn|error', default='debug', dest="loglevel")
+    # 指定参数-h的回调函数: parser.print_help = Usage  # Usage为函数对象
     return parser.parse_args()
 
 # Example:
