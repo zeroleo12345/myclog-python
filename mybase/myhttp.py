@@ -288,6 +288,14 @@ def url_decode(string, coding='utf8'):
     """ return: str
     example:
         %C3%FC%D6%D0%D7%A2%B6%A8.Only.You.2015.HD720P.X264.torrent ==> 命中注定.Only.You.2015.HD720P.X264.torrent
+
+        python2:        https://docs.python.org/2/library/urllib.html
+            from urllib import unquote
+            unquote('/%7Econnolly/')
+
+        python3:        https://docs.python.org/3/library/urllib.parse.html
+            from urllib.parse import urlparse
+            urlparse('http://www.cwi.nl:80/%7Eguido/Python.html')
     """
     if isinstance(string, unicode): string = string.encode( coding )
     return requests.utils.unquote(string)
