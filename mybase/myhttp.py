@@ -294,8 +294,8 @@ def url_decode(string, coding='utf8'):
             unquote('/%7Econnolly/')
 
         python3:        https://docs.python.org/3/library/urllib.parse.html
-            from urllib.parse import urlparse
-            urlparse('http://www.cwi.nl:80/%7Eguido/Python.html')
+            from urllib.parse import unquote
+            unquote('/El%20Ni%C3%B1o/')
     """
     if isinstance(string, unicode): string = string.encode( coding )
     return requests.utils.unquote(string)
