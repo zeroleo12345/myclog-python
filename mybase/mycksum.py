@@ -37,6 +37,7 @@ def md5(string):
 
 
 def sha256(string):
+    # result like: "531571116d75c423a8bad55008f2670ba9328a255f4ec1fc894260539f01da30" -- 64个字符
     _sha256 = hashlib.sha256()
     _sha256.update(string)
     return _sha256.hexdigest()
