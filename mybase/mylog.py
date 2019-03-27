@@ -145,7 +145,7 @@ if __name__ == '__main__':
     """ HOW TO USE Singleton """
     from mybase.mylog import MyLog
     log = MyLog()
-    log.init( log_dir='./', prefix='logtest' )
+    log.init(log_dir='./', prefix='logtest')
     log.level = log.DEBUG  # 设置总日志级别
     # fileno = log.add_filelog( 'DEBUG' ) or log.add_termlog( 'DEBUG' )
 

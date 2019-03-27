@@ -14,7 +14,6 @@ import requests
 import cookielib
 import urlparse
 from mybase.myutil import basetype_to_str
-from mybase.mylog import g_baselog
 #from requests.cookies import RequestsCookieJar
 
 class RequestFail(Exception):
@@ -181,7 +180,7 @@ User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like 
         return MyJsonResponse( json_dict, encoding )
 
 class MyRequest(object):
-    def __init__(self, url, method='GET', params=None, data=None, files=None, headers=None, mylog=g_baselog):
+    def __init__(self, url, method='GET', params=None, data=None, files=None, headers=None, mylog=None):
         self.url = url
         self.method = method
         self.params = params
@@ -192,7 +191,7 @@ class MyRequest(object):
         self._debug()
 
     def _debug(self):
-        if self.mylog.level == self.mylog.TRACE:
+        if self.mylog and self.mylog.level == self.mylog.TRACE:
             try:
                 func = inspect.stack()[2][3] # 获取上一层函数名
             except NameError:
@@ -203,7 +202,7 @@ class MyRequest(object):
             self.mylog.trace(msg)
 
 class MyJsonResponse(dict):
-    def __init__(self, json_dict, encoding=str, mylog=g_baselog):
+    def __init__(self, json_dict, encoding=str, mylog=None):
         if encoding is str:
             json_dict = basetype_to_str( json_dict )
         self.update( json_dict )
@@ -212,7 +211,7 @@ class MyJsonResponse(dict):
         self._debug()
 
     def _debug(self):
-        if self.mylog.level == self.mylog.TRACE:
+        if self.mylog and self.mylog.level == self.mylog.TRACE:
             try:
                 func = inspect.stack()[2][3] # 获取上一层函数名
             except NameError:
@@ -236,45 +235,34 @@ class MyJsonResponse(dict):
             return self.find_dict(item, all, **kwargs)
 
     def find_list(self, item='', all=False, start=0, **kwargs):
-        try:
-            ret = None
-            key, value = kwargs.popitem()
-            for d in self[item][start:]:
-                if not d.has_key(key): continue
-                if d[key] != value: continue
-                if all:
-                    ret = [].append(d)
-                else:
-                    ret = d
-                    break
-            if ret is None:
-                pdb.set_trace()
-                self.mylog.error( "Response:%s find None" % self )
-                raise Exception('Response find None.item:%s,key:%s,value%s' % (item, key, value) )
-            return ret
-        except Exception as e:
-            self.mylog.error( "%s" % traceback.format_exc() )
-            raise e
+        ret = None
+        key, value = kwargs.popitem()
+        for d in self[item][start:]:
+            if not d.has_key(key): continue
+            if d[key] != value: continue
+            if all:
+                ret = [].append(d)
+            else:
+                ret = d
+                break
+        if ret is None:
+            raise Exception('Response find None.item:%s,key:%s,value%s' % (item, key, value) )
+        return ret
 
     def find_dict(self, item='', all=False, **kwargs):
-        try:
-            ret = None
-            key, value = kwargs.popitem()
-            for d in self[item]:
-                if not d.has_key(key): continue
-                if d[key] != value: continue
-                if all:
-                    ret = [].append(d)
-                else:
-                    ret = d
-                    break
-            if ret is None:
-                self.mylog.error( "Response:%s" % self )
-                raise Exception('Response find None.item:%s,key:%s,value' % (item, key, value) )
-            return ret
-        except Exception as e:
-            self.mylog.error( "%s" % traceback.format_exc() )
-            raise e
+        ret = None
+        key, value = kwargs.popitem()
+        for d in self[item]:
+            if not d.has_key(key): continue
+            if d[key] != value: continue
+            if all:
+                ret = [].append(d)
+            else:
+                ret = d
+                break
+        if ret is None:
+            raise Exception('Response find None.item:%s,key:%s,value' % (item, key, value) )
+        return ret
 
 def url_encode(string, coding='utf8'):
     """ return: str
@@ -403,7 +391,7 @@ if __name__ == "__main__":
         python ./{0} test_get
         python ./{0} test_urlparse
         """.format(__file__)
-    import sys, os, pdb 
+    import sys, os
     if len(sys.argv) == 1: Usage(), sys.exit()
     function = sys.argv[1]
     del sys.argv[1]
