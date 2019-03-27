@@ -93,7 +93,8 @@ class MyLog(BaseLog):
     def add_filelog(self, level):
         """ 1. File Log """
         self.filelevel = eval( 'self.%s' % level.upper() )
-        if not self.filelevel: return
+        if not self.filelevel:
+            return
         #print('FileLog:%s, Level:%s' % ( self.tmp_filename, level ))
         _handler = logging.FileHandler( filename=self.tmp_filename, mode=self.mode, encoding='utf-8' )
         _formatter = MyFormatter( fmt=self.fmt, datefmt=self.datefmt )
@@ -106,7 +107,8 @@ class MyLog(BaseLog):
         """ 2. Term Log """
         self.termlevel = eval( 'self.%s' % level.upper() )
         #print(self.termlevel)
-        if not self.termlevel: return
+        if not self.termlevel:
+            return
         #print('TermLog, Level:%s' % level)
         _handler = logging.StreamHandler( stream=None )
         _formatter = logging.Formatter( fmt=self.fmt, datefmt=self.datefmt )
