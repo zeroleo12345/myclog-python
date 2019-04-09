@@ -320,7 +320,7 @@ if __name__ == "__main__":
         'unix_socket': '/tmp/mysql.sock',
         # 'host': '127.0.0.1', 'port': 3333,
         'user': 'root',
-        'password': 'feibonaqi2017!',
+        'password': 'password',
         'db': 'guanjia', # 使用指定数据库
         'use_unicode': True,
         'charset': 'utf8mb4', # 数据库连接编码
@@ -335,8 +335,6 @@ if __name__ == "__main__":
     def test_class_select():
         with MysqlPool(config) as p:
             rows = p.select('SELECT * FROM performance_schema.users WHERE USER=%s', ('root',))
-            # rows = p.select('SELECT sha(%s), password FROM guanjia.passwd where wxid=%s', ('sha(860433)', 'zeroleo12345'))
-            # rows = p.select('SELECT sha(%s) as input, password FROM guanjia.passwd where wxid=%s', ('860433', 'zeroleo12345'))
             if rows:
                 print rows
             else:

@@ -17,7 +17,7 @@ else:
 setup(name = "myclog",
     version = "0.1",
     author = "lynatgz",
-    author_email = "zeroleo12345@163.com",
+    author_email = "lyn.zhou@foxmail.com",
     description = "an Log module written in C",
     packages = packages,
     ext_modules = [extension_module],

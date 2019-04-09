@@ -101,7 +101,7 @@ if __name__ == "__main__":
             try:
                 # sql = "vacuum"
                 p.execute('insert into up_task(add_time, info_hash, owner) values(?, ?, ?)',
-                    ('add_time', '1', 'zeroleo12345')
+                    ('add_time', '1', 'zlx')
                 )
                 ret = p.commit()
                 print ret # None
@@ -113,7 +113,7 @@ if __name__ == "__main__":
         with MySqlite(config) as p:
             # 系统表: sqlite_master
             rows = p.select('select * from up_task')
-            print rows # [(1, u'add_time', u'1', u'zeroleo12345')]
+            print rows # [(1, u'add_time', u'1', u'zlx')]
 
 if __name__ == "__main__":
     def Usage():
