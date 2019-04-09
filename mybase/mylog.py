@@ -178,7 +178,6 @@ if __name__ == '__main__':
             log.close()
 
 if __name__ == "__main__":
-    from pprint import pprint; import pdb; pdb.set_trace()
     def Usage():
         print(""" 
         python ./mylog.py test_log_to_file
