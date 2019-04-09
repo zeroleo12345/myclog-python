@@ -11,8 +11,8 @@ ERROR:
 try:
     import redis
 except ImportError as e:
-    print """
-    MISS module! Please excute: pip install redis; pip install redis
+    print """ MISS module!
+    Please excute: pip install redis
     HiredisParser is better than PythonParser. OPTIONAL: pip install hiredis
     """
     raise e
@@ -154,8 +154,8 @@ class __HashEverytime(object):
     def zrem(name, *values):
         """ params:
                 use as:
-                    _list = ['key1', 'key2']
-                    zrem(key, *_list)
+                    方式1: _list = ['key1', 'key2']; zrem(key, *_list)
+                    方式2: zrem(key, 'key1', 'key2', 'key3')
             return:
                 len of success removed member.
         """
@@ -293,7 +293,7 @@ if __name__=="__main__":
         key = 'TestSortSet'
         subkey = "subkey"
         value = 100.0
-        _dict = { subkey:value, 'key1' : time.time(), 'key2': time.time()+100 }
+        _dict = {subkey: value, 'key1': time.time(), 'key2': time.time()+100}
         ret = g_hash_everytime.zadd(key, **_dict)
         print "zadd.ret:", ret
         start = 0
