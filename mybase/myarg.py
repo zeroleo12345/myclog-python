@@ -27,7 +27,7 @@ def init_args():
     #parser.add_argument('-p', '--port', metavar='<PORT>, type=int, help='http server port listen, default: 80')
     """ 参数: 单个字符串. -c myconf.conf   """
     #parser.add_argument('-c', metavar='<FILE>', type=str, help='config file path', required=False, dest='conf')
-    """ 参数: 多个字符串. -dict /dir/dict1 -dict /dir/dict2 """
+    """ 参数: 多个字符串. -dict /dir/dict1 -dict /dir/dict2 """ # nargs 用于控制参数后跟几个参数
     #parser.add_argument('-dict', action='append', metavar='<FILE>', type=str, nargs=1, help='radius dictionary file', required=True)
 
 
