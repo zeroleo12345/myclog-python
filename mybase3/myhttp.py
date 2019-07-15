@@ -1,4 +1,5 @@
-import urllib.parse
+from urllib.parse import quote
 
 def url_encode(url):
-    return urllib.parse.quote(url)
+    return quote(url)
+
