@@ -10,12 +10,17 @@ from __future__  import print_function
 import sys
 
 
+def usage():
+    print """
+    """
+
+
 # for k,v in args._get_kwargs():
 # 调用方法: parser.print_help()
 def init_args():
     import argparse
     parser = argparse.ArgumentParser(description='%s' % (sys.argv[0]))
-    parser.add_argument('--topic', action='append', metavar='<FILE>', type=str, help='radius dictionary file', required=True)
+    parser.add_argument('--topic', action='append', metavar='<FILE>', type=str, help='radius dictionary file', required=True, dest='variable')
     # 指定参数-h的回调函数: parser.print_help = Usage  # Usage为函数对象
     return parser.parse_args()
 
