@@ -107,6 +107,13 @@ class __HashEverytime(object):
         """
         pass
 
+    def sunion(self, *keys):
+        """
+        return:
+            set(). 没有数据返回空集合
+        """
+        pass
+
     # TYPE: SortSet
     def zadd(name, *args, **kwargs):
         """ params:
@@ -118,29 +125,37 @@ class __HashEverytime(object):
         """
         pass
     def zrem(name, *values):
-        """ params:
-                use as:
-                    _list = ['key1', 'key2']
-                    zrem(key, *_list)
-            return:
-                len of success removed member.
         """
-        pass
-    def zrange(self, name, start, end, desc=False, withscores=False, score_cast_func=None):
-        """ params:
-                score_cast_func: default is translate to float
-                use as: zrange('key', 0, -1, withscores=False)
-            return:
-                list. 没有数据返回空列表
+        params:
+            use as:
+                _list = ['key1', 'key2']
+                zrem(key, *_list)
+        return:
+            len of success removed member.
         """
         pass
 
-    def sunion(self, *keys):
+    def zrange(self, name, start, end, desc=False, withscores=False, score_cast_func=None):
         """
-            return:
-                set(). 没有数据返回空集合
+        params:
+            score_cast_func: default is translate to float
+            use as: zrange('key', 0, -1, withscores=False)
+        return:
+            list. 没有数据返回空列表
         """
         pass
+
+    def zrangebyscore():
+        """
+        example:
+            start = '-inf'
+            stop = '+inf'
+            pos = 0 
+            cnt = 1 
+            rows = g_hash_everytime.zrangebyscore(key, start, stop, withscores=False, start=pos, num=cnt)
+            print "zrangebyscore, pos:{}, cnt:{}, [{},{}], rows:{}".format( pos, cnt, start, stop, rows )
+        return:
+        """
 
     # TYPE: list
     def lrange(self, key, start, stop): 
