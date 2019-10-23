@@ -135,6 +135,13 @@ class __HashEverytime(object):
         """
         pass
 
+    def sunion(self, *keys):
+        """
+            return:
+                set(). 没有数据返回空集合
+        """
+        pass
+
     # TYPE: list
     def lrange(self, key, start, stop): 
         """ human sequence of redis-cli lrange rows, should use rpush.(which push at the tail) """

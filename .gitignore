@@ -203,6 +203,7 @@ FakesAssemblies/
 *.opt
 
 # Self Define
+.DS_Store
 dist/
 myclog.egg-info/
 tmp/
