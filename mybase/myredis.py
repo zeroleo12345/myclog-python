@@ -131,7 +131,7 @@ class __HashEverytime(object):
                 score_cast_func: default is translate to float
                 use as: zrange('key', 0, -1, withscores=False)
             return:
-                list, when success
+                list. 没有数据返回空列表
         """
         pass
 
