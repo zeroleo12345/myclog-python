@@ -155,6 +155,7 @@ class __HashEverytime(object):
             rows = g_hash_everytime.zrangebyscore(key, start, stop, withscores=False, start=pos, num=cnt)
             print "zrangebyscore, pos:{}, cnt:{}, [{},{}], rows:{}".format( pos, cnt, start, stop, rows )
         return:
+            list. 没有数据返回空列表
         """
 
     # TYPE: list
