@@ -4,7 +4,7 @@ from urllib.parse import quote
     urllib.parse.quote('#company#')
 
 # 方法2:
-    urllib.parse.urlencode({'#company#':'Yunpian','#code#':'1234'})
+    urllib.parse.urlencode({'#company#':'Yunpian', '#code#':'1234'})
 """
 
 def url_encode(url):
