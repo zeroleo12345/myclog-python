@@ -153,6 +153,12 @@ class __HashEverytime(object):
             list. 没有数据返回空列表
         """
 
+    def zinterstore():
+        """
+        example:
+            g_hash_everytime.zinterstore('destination_key', {'keya':1, 'key2':.5})
+        """
+
     def zrangebyscore():
         """
         example:
