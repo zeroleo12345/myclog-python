@@ -101,6 +101,7 @@ class __HashEverytime(object):
                 len of set, when success
         """
         pass
+
     def smembers(self, name):
         """ return:
                 set of members, when success. like: set(['member1', 'member2'])
@@ -124,6 +125,7 @@ class __HashEverytime(object):
                 len of sortset, when success
         """
         pass
+
     def zrem(name, *values):
         """
         params:
@@ -144,6 +146,12 @@ class __HashEverytime(object):
             list. 没有数据返回空列表
         """
         pass
+
+    def zrevrangebyscore():
+        """
+        return:
+            list. 没有数据返回空列表
+        """
 
     def zrangebyscore():
         """
