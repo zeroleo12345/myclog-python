@@ -37,6 +37,7 @@ class MyLog(ILog):
 
     @staticmethod
     def flush():
+        myclog.info('flush log')
         myclog.flush()
 
     @staticmethod
