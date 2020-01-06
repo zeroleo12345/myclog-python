@@ -155,6 +155,8 @@ class __HashEverytime(object):
 
     def zinterstore():
         """
+        return:
+            list. 没有数据返回空列表
         example:
             g_hash_everytime.zinterstore('destination_key', {'keya':1, 'key2':.5})
         """
