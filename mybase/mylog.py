@@ -53,14 +53,17 @@ class MyLog(BaseLog):
             yyyymmdd = time.strftime("%Y%m%d", time.localtime() )
             self._filename = os.path.join( self.log_dir, self.prefix + '_' + yyyymmdd + '_' + str(os.getpid()) + '.log' )
         return self._filename
+
     @property
     def tmp_filename(self):
         # %prefix_%yyyymmdd_%pid.log.tmp
         return self.filename + '.tmp'
+
     @property
     def level(self):
         """ return: number """
         return self.logger.getEffectiveLevel()
+
     @level.setter
     def level(self, _level):
         self.logger.setLevel( _level )
@@ -119,13 +122,17 @@ class MyLog(BaseLog):
 
     def info(self, msg, *args, **kwargs):
         self.logger.info(msg, *args, **kwargs)
+
     def error(self, msg, *args, **kwargs):
         self.logger.error(msg, *args, **kwargs)
+
     def warn(self, msg, *args, **kwargs):
         # same as: logger.warning
         self.logger.warn(msg, *args, **kwargs)
+
     def db(self, msg, *args, **kwargs):
         self.logger.debug(msg, *args, **kwargs)
+
     def trace(self, msg, *args, **kwargs): # more debug info
         if self.filelevel == self.TRACE or self.termlevel == self.TRACE:
             self.logger.debug(msg, *args, **kwargs)
