@@ -311,8 +311,15 @@ class MyRedisConnPoolManager():
                 socket_timeout: specific timeout(seconds) for reading; None for blocking.
                 socket_connect_timeout: specific timeout(seconds) for connect; None for blocking.
         """
-        self.conn_pool = redis.BlockingConnectionPool(host = host, port = port, password = password, db = db,
-                socket_timeout = socket_timeout, socket_connect_timeout = socket_connect_timeout)
+        self.conn_pool = redis.BlockingConnectionPool(host=host, port=port, password=password, db=db, socket_timeout=socket_timeout, socket_connect_timeout = socket_connect_timeout)
+
+
+"""
+测试连接:
+    r = redis.StrictRedis(host='xxx.aliyuncs.com', port=6379, password='password', db=0)
+    r.ping()
+"""
+
 
 if __name__=="__main__":
     # from mybase.myredis import MyRedisConnPoolManager, HashEverytime
