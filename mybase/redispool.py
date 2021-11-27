@@ -130,6 +130,7 @@ class __HashEverytime(object):
     # TYPE: Set
     def sadd(self, name, *values):
         """ usage:
+                sadd('set', 'member1')
                 sadd('set', 'member1', 'member2')
             return:
                 len of set, when success
